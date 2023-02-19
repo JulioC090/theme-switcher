@@ -1,0 +1,244 @@
+:root {
+  --white: #f8fafc;
+  --dark: #0f172a;
+  --primary: #dc2626;
+  --primary-hover: #ef4444;
+  --primary-focus: #b91c1c;
+
+  --bg: var(--white);
+  --text-color: var(--dark);
+
+  --highlight-color: #0000001a;
+  --select-color: #000000bf;
+}
+
+.theme--light {
+  --primary: #dc2626;
+  --primary-hover: #ef4444;
+  --primary-focus: #b91c1c;
+
+  --bg: var(--white);
+  --text-color: var(--dark);
+
+  --highlight-color: #0000001a;
+  --select-color: #000000bf;
+}
+
+.theme--dark {
+  --primary: #dc2626;
+  --primary-hover: #ef4444;
+  --primary-focus: #b91c1c;
+
+  --bg: var(--dark);
+  --text-color: var(--white);
+
+  --highlight-color: #e2e8f01a;
+  --select-color: #e2e8f0bf;
+}
+
+.theme--rocketseat {
+  --white: #e1e1e6;
+  --dark: #121214;
+
+  --primary: #8257e5;
+  --primary-hover: #9466ff;
+  --primary-focus: #996dff;
+
+  --bg: var(--dark);
+  --text-color: var(--white);
+
+  --highlight-color: #e2e8f01a;
+  --select-color: #e1e1e6;
+}
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--bg);
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  max-width: 1080px;
+  min-height: 100%;
+  padding: 64px 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.button {
+  background: transparent;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  max-width: 256px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus {
+  --ring-offset-width: 2px;
+  --ring-offset-color: var(--bg);
+  --ring-color: var(--primary-focus);
+
+  --ring-offset-shadow: 0px 0px 0px 2px var(--ring-offset-color);
+  --ring-shadow: 0px 0px 0px 4px var(--ring-color);
+
+  outline: none;
+  box-shadow: inset 0px 0px 0px 2px var(--highlight-color),
+    var(--ring-offset-shadow), var(--ring-shadow);
+}
+
+.button:active {
+  position: relative;
+  top: 2px;
+}
+
+.button.primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.button.primary:hover {
+  background: var(--primary-hover);
+}
+
+.button.secundary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.button.secundary:hover {
+  border: 2px solid var(--primary-hover);
+  color: var(--primary-hover);
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  flex-direction: column;
+  border-radius: 16px;
+}
+
+.colors {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+  padding: 36px;
+}
+
+.color {
+  display: flex;
+  flex: 1 1 0px;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+}
+
+.color:hover {
+  cursor: pointer;
+}
+
+.color::before {
+  content: "";
+  display: flex;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 2px var(--highlight-color);
+}
+
+.color:focus {
+  outline: none;
+}
+
+.color:focus::before {
+  --ring-offset-width: 2px;
+  --ring-offset-color: var(--bg);
+  --ring-color: var(--primary-focus);
+
+  --ring-offset-shadow: 0px 0px 0px 2px var(--ring-offset-color);
+  --ring-shadow: 0px 0px 0px 4px var(--ring-color);
+
+  box-shadow: inset 0px 0px 0px 2px var(--highlight-color),
+    var(--ring-offset-shadow), var(--ring-shadow);
+}
+
+.color--light::before {
+  background-color: #f8fafc;
+  box-shadow: inset 0px 0px 0px 2px var(--highlight-color);
+}
+
+.color--dark::before {
+  background-color: #0f172a;
+}
+
+.color--rocketseat::before {
+  background-color: #8257e5;
+}
+
+.color--selected::before {
+  --ring-offset-width: 2px;
+  --ring-offset-color: var(--bg);
+  --ring-color: var(--select-color);
+
+  --ring-offset-shadow: 0px 0px 0px 2px var(--ring-offset-color);
+  --ring-shadow: 0px 0px 0px 4px var(--ring-color);
+
+  box-shadow: inset 0px 0px 0px 2px var(--highlight-color),
+    var(--ring-offset-shadow), var(--ring-shadow);
+}
+
+.example {
+  border: 2px solid var(--highlight-color);
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.example p {
+  line-height: 2rem;
+}
+
+.example h2 + p {
+  margin-top: 16px;
+}
+
+.example p + p {
+  margin-top: 8px;
+}
+
+.example__buttons {
+  display: flex;
+  width: 100%;
+  margin-top: 32px;
+  justify-content: center;
+  gap: 32px;
+}
+
+.example__buttons .button {
+  flex: 1;
+}
