@@ -4,6 +4,8 @@
 
 Este é um projeto de site desenvolvido pensando no aperfeiçoamento de habilidades, utilizando para isso, a troca de tema, visto em muitos sites que buscam oferecer melhor experiência de navegação para todos os usuários. 
 
+Demo: <https://julioc090.github.io/theme-switcher/>
+
 ## Funcionalidades
 - Trocador de temas: permite que o usuário escolha entre três temas diferentes.
 
